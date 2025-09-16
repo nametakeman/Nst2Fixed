@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +24,7 @@ public class SecretMenu : MonoBehaviour
         }
         else
         {
-            Debug.Log("ƒŠƒZƒbƒg‚µ‚Ü‚·2");
+            Debug.Log("ãƒªã‚»ãƒƒãƒˆã—ã¾ã™2");
             secretCount = 0;
         }
         
@@ -49,7 +49,7 @@ public class SecretMenu : MonoBehaviour
         }
         else
         {
-            Debug.Log("ƒŠƒZƒbƒg‚µ‚Ü‚·N" + secretCount);
+            Debug.Log("ãƒªã‚»ãƒƒãƒˆã—ã¾ã™N" + secretCount);
             secretCount = 0;
         }
     }

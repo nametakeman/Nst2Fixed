@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PlayFab;
@@ -19,11 +19,11 @@ public class PlayFabTest : MonoBehaviour
             }
             , result =>
             {
-                Debug.Log("ƒƒOƒCƒ“¬Œ÷!");
+                Debug.Log("ãƒ­ã‚°ã‚¤ãƒ³æˆåŠŸ!");
                 SubmitScore(700);
                 SetName();
             }
-            ,error => Debug.Log("ƒƒOƒCƒ“Ž¸”s"));
+            ,error => Debug.Log("ãƒ­ã‚°ã‚¤ãƒ³å¤±æ•—"));
     }
 
     public void SetName()
@@ -35,7 +35,7 @@ public class PlayFabTest : MonoBehaviour
         },
         result =>
         {
-            Debug.Log("–¼‘O‚Ì•ÏX‚É¬Œ÷‚µ‚Ü‚µ‚½");
+            Debug.Log("åå‰ã®å¤‰æ›´ã«æˆåŠŸã—ã¾ã—ãŸ");
         },
         error =>
         {
@@ -57,7 +57,7 @@ public class PlayFabTest : MonoBehaviour
             }
         }, result =>
         {
-            Debug.Log($"ƒXƒRƒA{playerScore}‘—MŠ®—¹I");
+            Debug.Log($"ã‚¹ã‚³ã‚¢{playerScore}é€ä¿¡å®Œäº†ï¼");
         }, error =>
         { Debug.Log(error.GenerateErrorReport()); }
         );

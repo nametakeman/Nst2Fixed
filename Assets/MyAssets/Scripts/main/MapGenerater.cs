@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+ï»¿using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using System;
 using System.Collections;
@@ -11,7 +11,7 @@ using UnityEngine;
 
 public class MapGenerater : MonoBehaviour
 {
-    //À•W‚ğƒL[‚É‚µ‚ÄƒIƒuƒWƒFƒNƒg‚Ì–¼‘O‚ğ’l‚É‚·‚édictionary‚Ìì¬
+    //åº§æ¨™ã‚’ã‚­ãƒ¼ã«ã—ã¦ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åå‰ã‚’å€¤ã«ã™ã‚‹dictionaryã®ä½œæˆ
     public Dictionary<string, int> ObjectNameDic = new Dictionary<string, int>();
 
     [SerializeField] GameObject CubePrefab;
@@ -34,18 +34,18 @@ public class MapGenerater : MonoBehaviour
     [SerializeField] GameObject TEst;
     bool MapCheck = true;
 
-    //ƒIƒuƒWƒFƒNƒg‚ÌƒvƒŒƒnƒu‚ğŠi”[‚·‚éƒŠƒXƒg
+    //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ—ãƒ¬ãƒãƒ–ã‚’æ ¼ç´ã™ã‚‹ãƒªã‚¹ãƒˆ
     public List<GameObject> ObjectsType = new List<GameObject>();
-    //ƒIƒuƒWƒFƒNƒg‚Ì¶¬”‚ğŠi”[‚·‚édictionary.<ƒvƒŒƒnƒu,¶¬”>
+    //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç”Ÿæˆæ•°ã‚’æ ¼ç´ã™ã‚‹dictionary.<ãƒ—ãƒ¬ãƒãƒ–,ç”Ÿæˆæ•°>
     public Dictionary<GameObject,int> ObjectPeace = new Dictionary<GameObject, int>();
-    //ƒIƒuƒWƒFƒNƒg‚Ì”ÍˆÍ‚ğû”[‚·‚édictionary.<ƒvƒŒƒnƒu,”ÍˆÍ>
+    //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç¯„å›²ã‚’åç´ã™ã‚‹dictionary.<ãƒ—ãƒ¬ãƒãƒ–,ç¯„å›²>
     public Dictionary<GameObject, float> ObjectRangeD = new Dictionary<GameObject, float>();
-    //¶¬‚µ‚½ƒIƒuƒWƒFƒNƒg‚ÌƒvƒŒƒnƒu‚ğ’u‚¢‚Ä‚¢‚­ƒŠƒXƒg
+    //ç”Ÿæˆã—ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ—ãƒ¬ãƒãƒ–ã‚’ç½®ã„ã¦ã„ããƒªã‚¹ãƒˆ
     public List<GameObject> CreatedObject = new List<GameObject>();
-    //¶¬‚µ‚½ƒIƒuƒWƒFƒNƒg‚ÌÀ•W‚ğ’u‚¢‚Ä‚¢‚­ƒŠƒXƒg
+    //ç”Ÿæˆã—ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åº§æ¨™ã‚’ç½®ã„ã¦ã„ããƒªã‚¹ãƒˆ
     public List<Vector3> CreatedObjectPos = new List<Vector3>();
 
-    //objectStatus‚ğŒp³‚·‚éƒNƒ‰ƒX‚ÌƒŠƒXƒg
+    //objectStatusã‚’ç¶™æ‰¿ã™ã‚‹ã‚¯ãƒ©ã‚¹ã®ãƒªã‚¹ãƒˆ
     ObjectStatus[] _objectStatuses = new ObjectStatus[]
     {
         new JumpRock1()
@@ -54,7 +54,7 @@ public class MapGenerater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //ƒIƒuƒWƒFƒNƒg‚Ìí—Ş‚ğ’Ç‰ÁBŒã‚Å‚Ç‚Á‚©‘¼‚Ìƒtƒ@ƒCƒ‹‚É‚Ü‚Æ‚ß‚ç‚ê‚È‚¢‚©ŒŸ“¢
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç¨®é¡ã‚’è¿½åŠ ã€‚å¾Œã§ã©ã£ã‹ä»–ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«ã¾ã¨ã‚ã‚‰ã‚Œãªã„ã‹æ¤œè¨
         ObjectsType.Add(JumpRock1);
         ObjectsType.Add(BreakShipFront);
         ObjectsType.Add(BreakShipBack);
@@ -68,7 +68,7 @@ public class MapGenerater : MonoBehaviour
         ObjectsType.Add(AlarmClock);
         ObjectsType.Add(Bill);
         ObjectsType.Add(ItemBox);
-        //ƒIƒuƒWƒFƒNƒg‚Ì¶¬”‚ğ’Ç‰ÁBŒã‚Å‚Ç‚Á‚©‘¼‚Ìƒtƒ@ƒCƒ‹‚É‚Ü‚Æ‚ß‚ç‚ê‚È‚¢‚©ŒŸ“¢
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç”Ÿæˆæ•°ã‚’è¿½åŠ ã€‚å¾Œã§ã©ã£ã‹ä»–ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«ã¾ã¨ã‚ã‚‰ã‚Œãªã„ã‹æ¤œè¨
         ObjectPeace.Add(JumpRock1, 40);
         ObjectPeace.Add(BreakShipFront, 4);
         ObjectPeace.Add(BreakShipBack, 4);
@@ -80,7 +80,7 @@ public class MapGenerater : MonoBehaviour
         ObjectPeace.Add(Bed, 4);
         ObjectPeace.Add (AlarmClock, 30);
         ObjectPeace.Add(Bill, 20);
-        ObjectPeace.Add(ItemBox, 17);
+        ObjectPeace.Add(ItemBox, 0);
 
         
         int BuriRandom = UnityEngine.Random.Range(0, 101);
@@ -90,7 +90,7 @@ public class MapGenerater : MonoBehaviour
             BuriNum = 1;
         }
         ObjectPeace.Add(Buri, BuriNum);
-        //ƒIƒuƒWƒFƒNƒg‚²‚Æ‚Ì”ÍˆÍ‚Ìdictionary.Œã‚Å‚Ç‚Á‚©‘¼‚Ìƒtƒ@ƒCƒ‹‚É‚Ü‚Æ‚ß‚ç‚ê‚È‚¢‚©ŒŸ“¢
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã”ã¨ã®ç¯„å›²ã®dictionary.å¾Œã§ã©ã£ã‹ä»–ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«ã¾ã¨ã‚ã‚‰ã‚Œãªã„ã‹æ¤œè¨
         ObjectRangeD.Add(JumpRock1, 45);
         ObjectRangeD.Add(BreakShipFront, 150);
         ObjectRangeD.Add(BreakShipBack, 300);
@@ -104,7 +104,7 @@ public class MapGenerater : MonoBehaviour
         ObjectRangeD.Add(AlarmClock, 20);
         ObjectRangeD.Add(Bill, 150);
         ObjectRangeD.Add(ItemBox, 50);
-        //ƒLƒ…[ƒuì¬—p‚ÌƒŠƒXƒg‚ğì¬
+        //ã‚­ãƒ¥ãƒ¼ãƒ–ä½œæˆç”¨ã®ãƒªã‚¹ãƒˆã‚’ä½œæˆ
         List<float> CubePosZ = new List<float>();
         List<float> CubePosY = new List<float>();
 
@@ -114,22 +114,22 @@ public class MapGenerater : MonoBehaviour
 
         while (MapCheck)
         {
-            //Cubesƒ^ƒO‚Ì•t‚¢‚½ƒIƒuƒWƒFƒNƒg‚ğ‚·‚×‚Äæ“¾‚µ‚Ä”z—ñ‚ÉŠi”[
+            //Cubesã‚¿ã‚°ã®ä»˜ã„ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ã™ã¹ã¦å–å¾—ã—ã¦é…åˆ—ã«æ ¼ç´
             GameObject[] Cubes = GameObject.FindGameObjectsWithTag("Cubes");
-            //”z—ñ‚©‚çzÀ•W‚ğ”²‚«o‚µ‚Älist‚É’Ç‰Á‚µ‚Ä‚¢‚­
+            //é…åˆ—ã‹ã‚‰zåº§æ¨™ã‚’æŠœãå‡ºã—ã¦listã«è¿½åŠ ã—ã¦ã„ã
             for (int yakiniku = Cubes.Length; yakiniku > 0; yakiniku--)
             {
                 CubePosZ.Add(Cubes[yakiniku - 1].transform.position.z);
                 CubePosY.Add(Cubes[yakiniku - 1].transform.position.y);
             }
-            //ƒŠƒXƒg‚Ì•\¦—p
+            //ãƒªã‚¹ãƒˆã®è¡¨ç¤ºç”¨
             /*
             for (int sukiyaki = 0; sukiyaki < CubePosZ.Count; sukiyaki++)
             {
-                Debug.Log("yƒ}ƒbƒvŒnz" + CubePosZ[sukiyaki]);
+                Debug.Log("ã€ãƒãƒƒãƒ—ç³»ã€‘" + CubePosZ[sukiyaki]);
             }
             */
-            //ƒŠƒXƒg‚Ì’†g‚ğ¸‡‚É•À‚×‚éB
+            //ãƒªã‚¹ãƒˆã®ä¸­èº«ã‚’æ˜‡é †ã«ä¸¦ã¹ã‚‹ã€‚
             CubePosZ.Sort();
             CubePosY.Sort();
             int CubePosZEnd = CubePosZ.Count - 1;
@@ -148,7 +148,7 @@ public class MapGenerater : MonoBehaviour
             CubePosY.Clear();
         }
         ObjectsCreate();
-        Debug.Log("ƒ}ƒbƒv‚Ì¶¬‚ªI—¹‚µ‚Ü‚µ‚½");
+        Debug.Log("ãƒãƒƒãƒ—ã®ç”ŸæˆãŒçµ‚äº†ã—ã¾ã—ãŸ");
         WaitObjects.SetActive(true);
 
     }
@@ -156,9 +156,9 @@ public class MapGenerater : MonoBehaviour
    
     private async UniTask ObjectsCreate2()
     {
-        //1cube‚ğ•ªŠ„‚·‚é‚½‚ß‚Ì“ñŸŒ³”z—ñ‚ğ€”õA
+        //1cubeã‚’åˆ†å‰²ã™ã‚‹ãŸã‚ã®äºŒæ¬¡å…ƒé…åˆ—ã‚’æº–å‚™ã€
         bool[,] _mapDivisioner = new bool[350, 350];
-        //”z—ñ‚Ì‰Šú‰»ˆ—
+        //é…åˆ—ã®åˆæœŸåŒ–å‡¦ç†
         for(int i = 349; i >= 0; i--)
         {
             for(int i2 = 349; i2 >= 0; i2--)
@@ -167,14 +167,14 @@ public class MapGenerater : MonoBehaviour
             }
         }
 
-        //‘ÎÛ‚Æ‚È‚éƒIƒuƒWƒFƒNƒg‚ğ‘I‘ğ
+        //å¯¾è±¡ã¨ãªã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’é¸æŠ
         for(int i = _objectStatuses.Length - 1; i >= 0; i--)
         {
             ObjectStatus _targetedOb = _objectStatuses[i];
-            //“ñŸŒ³”z—ñ‚ÌÀ•W‚ğ‚¢‚ê‚éVector2ƒŠƒXƒgŒ^
+            //äºŒæ¬¡å…ƒé…åˆ—ã®åº§æ¨™ã‚’ã„ã‚Œã‚‹Vector2ãƒªã‚¹ãƒˆå‹
             List<Vector2> _registerPoses = new List<Vector2>();
 
-            //mapDivisioner‚Ì0,0‚ğn“_‚Æ‚µ‚Ä‹K‘¥“I‚ÉŠl“¾‰Â”\‚È—Ìˆæ‚ğ’²‚×‚éB”­Œ©Œã‚Ín“_‚ÌÀ•W‚ğ•Û‘¶‚µ‚Ä‚¨‚­BƒIƒuƒWƒFƒNƒg‚Ì’†S‚É’¼‚³‚È‚¢I
+            //mapDivisionerã®0,0ã‚’å§‹ç‚¹ã¨ã—ã¦è¦å‰‡çš„ã«ç²å¾—å¯èƒ½ãªé ˜åŸŸã‚’èª¿ã¹ã‚‹ã€‚ç™ºè¦‹å¾Œã¯å§‹ç‚¹ã®åº§æ¨™ã‚’ä¿å­˜ã—ã¦ãŠãã€‚ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä¸­å¿ƒã«ç›´ã•ãªã„ï¼
             for(int n = 0; n < 350;  n++)
             {
                 for(int n2 = 0 ; n2 < 350; n2++)
@@ -188,22 +188,22 @@ public class MapGenerater : MonoBehaviour
                 }
             }
 
-            Debug.Log("İ’u‰Â”\n“_ŒÂ”" + _registerPoses.Count());
+            Debug.Log("è¨­ç½®å¯èƒ½å§‹ç‚¹å€‹æ•°" + _registerPoses.Count());
 
             List<int> _registerRandomInt = new List<int>();
             List<Vector2> _dsidedPoses = new List<Vector2>();
             while (_dsidedPoses.Count <= _objectStatuses[i]._NumOfPiece)
             {
-                //¶¬‚·‚é‚Ô‚ñƒ‰ƒ“ƒ_ƒ€‚Å‚Ô‚ñ‚Ü‚í‚·
+                //ç”Ÿæˆã™ã‚‹ã¶ã‚“ãƒ©ãƒ³ãƒ€ãƒ ã§ã¶ã‚“ã¾ã‚ã™
                 int _randomInt = UnityEngine.Random.Range(0, _registerPoses.Count);
-                //‚à‚µŠùo‚È‚ç‚»‚±‚Åˆ—‚ğI—¹‚³‚¹‚éB
+                //ã‚‚ã—æ—¢å‡ºãªã‚‰ãã“ã§å‡¦ç†ã‚’çµ‚äº†ã•ã›ã‚‹ã€‚
                 if (_registerRandomInt.Contains(_randomInt))
                 {
                     continue;
                 }
 
 
-                //‚¿‚á‚ñ‚Æ¶¬êŠ‚ªŠm•Û‚Å‚«‚é‚©‚ğŠm”F‚·‚é
+                //ã¡ã‚ƒã‚“ã¨ç”Ÿæˆå ´æ‰€ãŒç¢ºä¿ã§ãã‚‹ã‹ã‚’ç¢ºèªã™ã‚‹
                 bool _result = await _searchRange(i, _mapDivisioner, _registerPoses[_randomInt]);
                 _registerRandomInt.Add(_randomInt);
                 if (!_result)
@@ -211,7 +211,7 @@ public class MapGenerater : MonoBehaviour
                     continue;
                 }
 
-                //¶¬‚·‚é
+                //ç”Ÿæˆã™ã‚‹
                 Vector2 _fixedPos = _fixPos(i,_registerPoses[_randomInt], new Vector3(1750,0,1750));
                 Instantiate(TEst, new Vector3(_fixedPos.x, 10, _fixedPos.y), Quaternion.identity);
             }
@@ -220,7 +220,7 @@ public class MapGenerater : MonoBehaviour
 
     private async UniTask<bool> _searchRange(int i, bool[,] _mapDivisioner, Vector2 _startPoint)
     {
-        //n“_‚Ífalse
+        //å§‹ç‚¹ã¯false
         for (int n3 = 0; n3 < _objectStatuses[i]._length * 2; n3++)
         {
             for (int n4 = 0; n4 < _objectStatuses[i]._width * 2; n4++)
@@ -228,7 +228,7 @@ public class MapGenerater : MonoBehaviour
 
                 if (_mapDivisioner[(int)_startPoint.x + n3,(int)_startPoint.y + n4])
                 {
-                    //‚±‚±‚Ítrue‚É‚È‚Á‚½“_‚Ån“_(n,n2)‚ğ‚¸‚ç‚·
+                    //ã“ã“ã¯trueã«ãªã£ãŸæ™‚ç‚¹ã§å§‹ç‚¹(n,n2)ã‚’ãšã‚‰ã™
                     return false;
                 }
             }
@@ -236,53 +236,53 @@ public class MapGenerater : MonoBehaviour
         return true;
     }
 
-    //worldPos‚Í¶¬‚·‚écube‚Ì’†SÀ•W‚ğ“n‚·B
+    //worldPosã¯ç”Ÿæˆã™ã‚‹cubeã®ä¸­å¿ƒåº§æ¨™ã‚’æ¸¡ã™ã€‚
     private Vector2 _fixPos(int _objectNum, Vector2 _fixedPos, Vector3 _worldPos)
     {
-        //‚±‚±‚Å”ò‚ñ‚Å‚­‚é‚Ì‚Ín“_‚ÌÀ•W
-        //“ñŸŒ³”z—ñ‚Ì0,0(‚Ì’†‚Å‚àˆê”Ô¶‰º)‚É‚ ‚½‚éŠî€‚Ìƒ[ƒ‹ƒhÀ•W‚ğo‚·
-        Vector2 _firstWdPos = new Vector2(0, _worldPos.z - 1750);//‚±‚êcube‚Ì‘å‚«‚³•Ï‚¦‚é‚ÆƒoƒO‚é‚Ì’ˆÓI
+        //ã“ã“ã§é£›ã‚“ã§ãã‚‹ã®ã¯å§‹ç‚¹ã®åº§æ¨™
+        //äºŒæ¬¡å…ƒé…åˆ—ã®0,0(ã®ä¸­ã§ã‚‚ä¸€ç•ªå·¦ä¸‹)ã«ã‚ãŸã‚‹åŸºæº–ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’å‡ºã™
+        Vector2 _firstWdPos = new Vector2(0, _worldPos.z - 1750);//ã“ã‚Œcubeã®å¤§ãã•å¤‰ãˆã‚‹ã¨ãƒã‚°ã‚‹ã®æ³¨æ„ï¼
 
         Vector2 _startWdPos = new Vector2(_firstWdPos.x + _fixedPos.x * 10, _firstWdPos.y + _fixedPos.y * 10);
         return new Vector2(_startWdPos.x + _objectStatuses[_objectNum]._width * 10,_startWdPos.y + _objectStatuses[_objectNum]._length * 10);
     }
 
-    //ƒ}ƒbƒv“à‚ÌƒIƒuƒWƒFƒNƒg‚ğì¬‚·‚éƒƒ\ƒbƒh
+    //ãƒãƒƒãƒ—å†…ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
     private void ObjectsCreate()
     {
-        //Cubesƒ^ƒO‚Ì•t‚¢‚½ƒIƒuƒWƒFƒNƒg‚ğ‚·‚×‚Äæ“¾‚µ‚Ä”z—ñ‚ÉŠi”[
+        //Cubesã‚¿ã‚°ã®ä»˜ã„ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ã™ã¹ã¦å–å¾—ã—ã¦é…åˆ—ã«æ ¼ç´
         GameObject[] Cubes = GameObject.FindGameObjectsWithTag("Cubes");
 
-        //¶¬‚µ‚½ƒIƒuƒWƒFƒNƒg‚ÌƒvƒŒƒnƒu‚ğ’u‚¢‚Ä‚¢‚­ƒŠƒXƒg
+        //ç”Ÿæˆã—ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ—ãƒ¬ãƒãƒ–ã‚’ç½®ã„ã¦ã„ããƒªã‚¹ãƒˆ
         List<GameObject> CreatedObject = new List<GameObject>();
-        //¶¬‚µ‚½ƒIƒuƒWƒFƒNƒg‚ÌÀ•W‚ğ’u‚¢‚Ä‚¢‚­ƒŠƒXƒg
+        //ç”Ÿæˆã—ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åº§æ¨™ã‚’ç½®ã„ã¦ã„ããƒªã‚¹ãƒˆ
         List<Vector3> CreatedObjectPos = new List<Vector3>();
         
         bool OutRangeCheck = false;
 
-        //‚·‚×‚Ä‚ÌƒLƒ…[ƒu‚ÉŒJ‚è•Ô‚µ¶¬‚·‚é
+        //ã™ã¹ã¦ã®ã‚­ãƒ¥ãƒ¼ãƒ–ã«ç¹°ã‚Šè¿”ã—ç”Ÿæˆã™ã‚‹
         for (int udon = Cubes.Length; udon > 0; udon--)
         {
 
             for (int onigiri = ObjectsType.Count; onigiri > 0; onigiri--)
             {
-                //ƒ‹[ƒv‚Ì‰ñ”‚©‚ç¡‰ñ¶¬‚·‚éƒvƒŒƒnƒu‚ğæ“¾‚µ‚Ä‚­‚éB
+                //ãƒ«ãƒ¼ãƒ—ã®å›æ•°ã‹ã‚‰ä»Šå›ç”Ÿæˆã™ã‚‹ãƒ—ãƒ¬ãƒãƒ–ã‚’å–å¾—ã—ã¦ãã‚‹ã€‚
                 GameObject CreateObjectPrefab = ObjectsType[onigiri - 1];
-                //ƒIƒuƒWƒFƒNƒg‚Ì¶¬”‚ğdictionary‚©‚çæ“¾‚µ‚Ä‚­‚éB
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç”Ÿæˆæ•°ã‚’dictionaryã‹ã‚‰å–å¾—ã—ã¦ãã‚‹ã€‚
                 int CreateObjectPeace = ObjectPeace[CreateObjectPrefab];
 
-                //oden‚ÍƒAƒCƒeƒ€‚Ì¶¬—ÊB
+                //odenã¯ã‚¢ã‚¤ãƒ†ãƒ ã®ç”Ÿæˆé‡ã€‚
                 for (int oden = 1; oden <= CreateObjectPeace; oden++)
                 {
-                    //‚±‚±‚Å‚ÍƒeƒXƒg‚Ì‚½‚ß‚ÉCube‚ğˆêŒÂ–Ú‚É‚·‚éB‚ ‚Æ‚Å•ÏXI
+                    //ã“ã“ã§ã¯ãƒ†ã‚¹ãƒˆã®ãŸã‚ã«Cubeã‚’ä¸€å€‹ç›®ã«ã™ã‚‹ã€‚ã‚ã¨ã§å¤‰æ›´ï¼
                     Vector3 CubesO = Cubes[udon - 1].transform.position;
-                    //ƒIƒuƒWƒFƒNƒg‚ğ¶¬‚·‚éêŠ‚ğ‚Æ‚è‚ ‚¦‚¸ƒ‰ƒ“ƒ_ƒ€‚Å¶¬
+                    //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã™ã‚‹å ´æ‰€ã‚’ã¨ã‚Šã‚ãˆãšãƒ©ãƒ³ãƒ€ãƒ ã§ç”Ÿæˆ
                     Vector3 ObjectPos = new Vector3();
                     ObjectPos.x = UnityEngine.Random.Range(CubesO.x - 665, CubesO.x + 666);
                     ObjectPos.z = UnityEngine.Random.Range(CubesO.z - 1750, CubesO.z + 1751);
                     ObjectPos.y = CreateObjectPrefab.transform.position.y;
 
-                    //‚à‚µ‰‚ß‚Ä¶¬‚·‚éƒIƒuƒWƒFƒNƒg‚È‚ç‚»‚Ì‚Ü‚Üİ’u
+                    //ã‚‚ã—åˆã‚ã¦ç”Ÿæˆã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãªã‚‰ãã®ã¾ã¾è¨­ç½®
                     if (CreatedObject.Count == 0)
                     {
                         CreatedObject.Add(CreateObjectPrefab);
@@ -302,43 +302,43 @@ public class MapGenerater : MonoBehaviour
                     }
                 }
             }
-            //1ƒLƒ…[ƒu•ªI‚í‚Á‚½‚çƒŠƒXƒgŒn‚Ì’†g‚ğƒŠƒZƒbƒg‚·‚é
+            //1ã‚­ãƒ¥ãƒ¼ãƒ–åˆ†çµ‚ã‚ã£ãŸã‚‰ãƒªã‚¹ãƒˆç³»ã®ä¸­èº«ã‚’ãƒªã‚»ãƒƒãƒˆã™ã‚‹
             CreatedObject.Clear();
             CreatedObjectPos.Clear();
         }
 
     }
 
-    //”CˆÓ‚Ì”ÍˆÍ“à‚©‚Ç‚¤‚©‚ğ•Ô‚·B”ÍˆÍ‚ª‚©‚Ô‚Á‚Ä‚¢‚½‚çfalseA”í‚Á‚Ä‚¢‚È‚©‚Á‚½‚çtrue‚ğ•Ô‚·B
+    //ä»»æ„ã®ç¯„å›²å†…ã‹ã©ã†ã‹ã‚’è¿”ã™ã€‚ç¯„å›²ãŒã‹ã¶ã£ã¦ã„ãŸã‚‰falseã€è¢«ã£ã¦ã„ãªã‹ã£ãŸã‚‰trueã‚’è¿”ã™ã€‚
     private bool OutRange(Vector3 OPosComparison, float RangeComparison)
     {
         for (int SearchObject = CreatedObject.Count; SearchObject > 0; SearchObject--)
         {
-            //ˆÈ‰º‚ªdictionary‚©‚çQÆ‚µ‚Ä‚¢‚­—p‚Ì”z—ñ
+            //ä»¥ä¸‹ãŒdictionaryã‹ã‚‰å‚ç…§ã—ã¦ã„ãç”¨ã®é…åˆ—
             float[] xObjectPosA = new float[2];
             float[] zObjectPosA = new float[2];
             
-            //‚»‚ê‚¼‚êƒ‹[ƒv–ˆ‚ÅQÆ‚µ‚Ä‚¢‚édictionary‚ÌÀ•W‚ğæ“¾‚µ‚ÄƒŠƒXƒg‚ÉŠi”[
+            //ãã‚Œãã‚Œãƒ«ãƒ¼ãƒ—æ¯ã§å‚ç…§ã—ã¦ã„ã‚‹dictionaryã®åº§æ¨™ã‚’å–å¾—ã—ã¦ãƒªã‚¹ãƒˆã«æ ¼ç´
             xObjectPosA[0] = CreatedObjectPos[SearchObject - 1].x; zObjectPosA[2] = CreatedObjectPos[SearchObject - 1].z;
             GameObject ObjectName = CreatedObject[SearchObject - 1];
             
-            //ObjectPos[xÀ•W‚Ìƒvƒ‰ƒX•ûŒü‚Ì”ÍˆÍ,xÀ•W‚Ìƒ}ƒCƒiƒX•ûŒü‚Ì”ÍˆÍ,zÀ•W‚Ìƒvƒ‰ƒX•ûŒü‚Ì”ÍˆÍ,zÀ•W‚Ìƒ}ƒCƒiƒX•ûŒü‚Ì”ÍˆÍ]
+            //ObjectPos[xåº§æ¨™ã®ãƒ—ãƒ©ã‚¹æ–¹å‘ã®ç¯„å›²,xåº§æ¨™ã®ãƒã‚¤ãƒŠã‚¹æ–¹å‘ã®ç¯„å›²,zåº§æ¨™ã®ãƒ—ãƒ©ã‚¹æ–¹å‘ã®ç¯„å›²,zåº§æ¨™ã®ãƒã‚¤ãƒŠã‚¹æ–¹å‘ã®ç¯„å›²]
             xObjectPosA[0] += ObjectRangeD[ObjectName]; xObjectPosA[1] = xObjectPosA[0] - ObjectRangeD[ObjectName];
             zObjectPosA[0] += ObjectRangeD[ObjectName]; zObjectPosA[1] = zObjectPosA[0] - ObjectRangeD[ObjectName];
-            //¸‡‚Éƒ\[ƒg‚·‚é
+            //æ˜‡é †ã«ã‚½ãƒ¼ãƒˆã™ã‚‹
             Array.Sort(xObjectPosA);
             Array.Sort (zObjectPosA);
             
-            //ˆÈ‰º‚ª”äŠr‚³‚ê‚éƒIƒuƒWƒFƒNƒg‚Ì”z—ñ
+            //ä»¥ä¸‹ãŒæ¯”è¼ƒã•ã‚Œã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é…åˆ—
             float[] xObjectPosB = new float[2];
             float[] zObjectPosB = new float[2];
             xObjectPosB[0] = OPosComparison.x + RangeComparison; xObjectPosB[1] = OPosComparison.x - RangeComparison;
             zObjectPosB[0] = OPosComparison.z + RangeComparison; zObjectPosB[1] = OPosComparison.z - RangeComparison;
-            //¸‡‚Éƒ\[ƒg
+            //æ˜‡é †ã«ã‚½ãƒ¼ãƒˆ
             Array.Sort(xObjectPosB);
             Array.Sort (zObjectPosB);
 
-            //‚Ü‚¸x²‚©‚ç”ÍˆÍ“à‚É“ü‚Á‚Ä‚é‚Ì‚İfalse‚ğ•Ô‚·
+            //ã¾ãšxè»¸ã‹ã‚‰ç¯„å›²å†…ã«å…¥ã£ã¦ã‚‹æ™‚ã®ã¿falseã‚’è¿”ã™
             if ((xObjectPosB[0] <= xObjectPosA[0] && xObjectPosA[0] <= xObjectPosB[1]) || (xObjectPosB[0] <= xObjectPosA[1] && xObjectPosA[1] <= xObjectPosB[1] ))
             {
 

@@ -1,4 +1,4 @@
-using Photon.Pun;
+ï»¿using Photon.Pun;
 using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ public class OnlineEnd : MonoBehaviourPunCallbacks
 
     public void OnlineEndMethod()
     {
-        //Photon‚ÌƒJƒXƒ^ƒ€ƒvƒƒpƒeƒB‚ğƒZƒbƒg
+        //Photonã®ã‚«ã‚¹ã‚¿ãƒ ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚’ã‚»ãƒƒãƒˆ
         propsToSet["end"] = "true";
         PhotonNetwork.LocalPlayer.SetCustomProperties(propsToSet);
         propsToSet.Clear();
@@ -40,7 +40,7 @@ public class OnlineEnd : MonoBehaviourPunCallbacks
         }
     }
 
-    //‘Šè‚ªƒ‹[ƒ€Ø’f‚µ‚½‚ÌƒR[ƒ‹ƒoƒbƒN
+    //ç›¸æ‰‹ãŒãƒ«ãƒ¼ãƒ åˆ‡æ–­ã—ãŸæ™‚ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         disconectNet();

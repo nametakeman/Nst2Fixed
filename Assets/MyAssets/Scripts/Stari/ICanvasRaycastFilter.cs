@@ -1,9 +1,9 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Sprite‚ÌPhysicsShape‚Ì“à•”‚Ì‚İ“–‚½‚è”»’è‚ğ—LŒø‚É‚·‚éRaycastFilter
+/// Spriteã®PhysicsShapeã®å†…éƒ¨ã®ã¿å½“ãŸã‚Šåˆ¤å®šã‚’æœ‰åŠ¹ã«ã™ã‚‹RaycastFilter
 /// </summary>
 [RequireComponent(typeof(Image))]
 public class PhysicsShapeRaycastFilter : MonoBehaviour, ICanvasRaycastFilter
@@ -29,7 +29,7 @@ public class PhysicsShapeRaycastFilter : MonoBehaviour, ICanvasRaycastFilter
 
         var rect = rectTransform.rect;
 
-        // ƒXƒvƒ‰ƒCƒg“à‚ÌÀ•W‹óŠÔ‚Å‚ÌˆÊ’u‚ğŒvZ‚·‚é
+        // ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆå†…ã®åº§æ¨™ç©ºé–“ã§ã®ä½ç½®ã‚’è¨ˆç®—ã™ã‚‹
         var pivot = rectTransform.pivot;
         var sprite = image.sprite;
         var x = (local.x / rect.width + pivot.x - 0.5f) * sprite.rect.width / sprite.pixelsPerUnit;
@@ -42,7 +42,7 @@ public class PhysicsShapeRaycastFilter : MonoBehaviour, ICanvasRaycastFilter
             sprite.GetPhysicsShape(i, _verts);
             if (IsInPolygon(_verts, p))
             {
-                // ‚Ç‚ê‚©‚Ì‘½ŠpŒ`‚Ì“à•”‚É‚ ‚ê‚Îtrue‚ğ•Ô‚·
+                // ã©ã‚Œã‹ã®å¤šè§’å½¢ã®å†…éƒ¨ã«ã‚ã‚Œã°trueã‚’è¿”ã™
                 return true;
             }
         }
@@ -51,11 +51,11 @@ public class PhysicsShapeRaycastFilter : MonoBehaviour, ICanvasRaycastFilter
     }
 
     /// <summary>
-    /// ”ñ“Ê‘½ŠpŒ`‚Ì“à•”‚É“_‚ª‘¶İ‚·‚é‚©‚Ç‚¤‚©
+    /// éå‡¸å¤šè§’å½¢ã®å†…éƒ¨ã«ç‚¹ãŒå­˜åœ¨ã™ã‚‹ã‹ã©ã†ã‹
     /// </summary>
     private static bool IsInPolygon(List<Vector2> polygon, Vector2 p)
     {
-        // p‚©‚çx²‚Ì³•ûŒü‚Ö‚Ì–³ŒÀ‚È”¼’¼ü‚ğl‚¦‚ÄA‘½ŠpŒ`‚Æ‚ÌŒğ·‰ñ”‚É‚æ‚Á‚Ä”»’è‚·‚é
+        // pã‹ã‚‰xè»¸ã®æ­£æ–¹å‘ã¸ã®ç„¡é™ãªåŠç›´ç·šã‚’è€ƒãˆã¦ã€å¤šè§’å½¢ã¨ã®äº¤å·®å›æ•°ã«ã‚ˆã£ã¦åˆ¤å®šã™ã‚‹
         var n = polygon.Count;
         var isIn = false;
         for (var i = 0; i < n; i++)
@@ -82,7 +82,7 @@ public class PhysicsShapeRaycastFilter : MonoBehaviour, ICanvasRaycastFilter
     }
 
     /// <summary>
-    /// ŠOÏ
+    /// å¤–ç©
     /// </summary>
     private static float CrossProduct(Vector2 u, Vector2 v)
     {

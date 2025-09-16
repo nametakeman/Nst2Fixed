@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -17,7 +17,7 @@ public class PerSecondText : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 velocity = Tuna.GetComponent<Rigidbody>().velocity;
-        //velocity‚ğ—İæ‚µ‚Ä‘å‚«‚³‚É•Ï‚¦‚ÄMathf.Sprt‚Åƒ‹[ƒg‰»‚·‚éB
+        //velocityã‚’ç´¯ä¹—ã—ã¦å¤§ãã•ã«å¤‰ãˆã¦Mathf.Sprtã§ãƒ«ãƒ¼ãƒˆåŒ–ã™ã‚‹ã€‚
         float TotalVelocity = Mathf.Sqrt(velocity.z * velocity.z + velocity.x * velocity.x) / 2;
         this.GetComponent<Text>().text = TotalVelocity.ToString("F0") + "km/h";
     }

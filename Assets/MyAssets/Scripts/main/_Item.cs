@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+ï»¿using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using JetBrains.Annotations;
 using System;
@@ -44,7 +44,7 @@ public class _Item : MonoBehaviour
         _cancellationToken = _cancellationTokenSource.Token;
     }
 
-    // Update is called once per frame
+    // ã‚­ãƒ¼å…¥åŠ›ã‚’Updateã§æ¤œå‡ºã—ã¦ã„ã‚‹å‡¦ç†ã‚„ã‚ã‚‹
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && holdItemNum != -1)
@@ -96,7 +96,7 @@ public class _Item : MonoBehaviour
     public async UniTask lotteryItem()
     {
         holdItemNum = UnityEngine.Random.Range(0,itemClasses.Length);
-        //‚±‚±‚Éƒ‹[ƒŒƒbƒg(ƒAƒCƒeƒ€æ“¾‚ÌƒfƒBƒŒƒC‚ğ“ü‚ê‚é)
+        //ã“ã“ã«ãƒ«ãƒ¼ãƒ¬ãƒƒãƒˆ(ã‚¢ã‚¤ãƒ†ãƒ å–å¾—ã®ãƒ‡ã‚£ãƒ¬ã‚¤ã‚’å…¥ã‚Œã‚‹)
         _emptyItemField.GetComponent<Image>().sprite = itemClasses[holdItemNum].itemImage;
     }
 }

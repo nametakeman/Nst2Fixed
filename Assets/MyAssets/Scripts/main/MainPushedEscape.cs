@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -30,7 +30,7 @@ public class MainPushedEscape : MonoBehaviour
         startButtan1Pos = Buttan1.transform.position;
         startButtan2Pos = Buttan2.transform.position;
         startButtan3Pos = Buttan3.transform.position;
-        Debug.Log("StartPosÇÕ" + startPos);
+        Debug.Log("StartPos„ÅØ" + startPos);
     }
 
     // Update is called once per frame

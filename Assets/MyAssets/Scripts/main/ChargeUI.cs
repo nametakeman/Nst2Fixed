@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+ï»¿using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +14,7 @@ public class ChargeUI : MonoBehaviour
     [SerializeField] _Item _item;
     bool RBottanState = false;
     bool TBottanState = false;
-    int _holdTime = 100; //“ü—Í‚É•K—v‚È’·‰Ÿ‚µŠÔ(ƒ~ƒŠ•b)
+    int _holdTime = 100; //å…¥åŠ›ã«å¿…è¦ãªé•·æŠ¼ã—æ™‚é–“(ãƒŸãƒªç§’)
     float _rFillAmount = 0;
     float _tFillAmount = 0;
 

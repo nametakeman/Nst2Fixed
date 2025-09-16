@@ -1,9 +1,9 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-//ƒIƒuƒWƒFƒNƒg‚ÌŠÔŠu‚ğŒ©‚é‚½‚ß‚ÌƒXƒNƒŠƒvƒgAx•ûŒü‚Éw’è‚ÌzÀ•W•ª—£‚ê‚½ƒIƒuƒWƒFƒNƒg‚ğ¶¬‚·‚éB
+//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é–“éš”ã‚’è¦‹ã‚‹ãŸã‚ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã€xæ–¹å‘ã«æŒ‡å®šã®zåº§æ¨™åˆ†é›¢ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã™ã‚‹ã€‚
 public class ObjectMator : MonoBehaviour
 {
     [SerializeField] GameObject Object;

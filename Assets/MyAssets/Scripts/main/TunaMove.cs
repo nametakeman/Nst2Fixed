@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+ï»¿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,10 +58,10 @@ public class TunaMove: MonoBehaviour
     {
         if (CountDownObject.GetComponent<CountDown>().StartCheck)
         {
-            //ƒ}ƒOƒ‚ÌŒ»İÀ•Wæ“¾—p
+            //ãƒã‚°ãƒ­ã®ç¾åœ¨åº§æ¨™å–å¾—ç”¨
             Vector3 pos = this.transform.position;
 
-            //…’†‚©‚Ç‚¤‚©‚ğ”»’f‚µ‚ÄƒtƒBƒ‹ƒ^[‚ğ§Œä‚·‚é
+            //æ°´ä¸­ã‹ã©ã†ã‹ã‚’åˆ¤æ–­ã—ã¦ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ã‚’åˆ¶å¾¡ã™ã‚‹
             if (pos.y >= 0.9f)
             {
                 ColorAdjustments c;
@@ -74,17 +74,17 @@ public class TunaMove: MonoBehaviour
                 Volume.profile.TryGet<ColorAdjustments>(out c);
                 c.colorFilter.value = new Color(0.6862745f, 0.9960784f, 1);
             }
-            else if(pos.y <= -28f@&& !_death)
+            else if(pos.y <= -28fã€€&& !_death)
             {
                 _death = true;
                 _deathClass.deathFlow();
             }
 
             speed = 1;
-            //ƒ}ƒOƒ‚Ì¡‚ÌƒXƒs[ƒh
+            //ãƒã‚°ãƒ­ã®ä»Šã®ã‚¹ãƒ”ãƒ¼ãƒ‰
             Vector3 NowSpeed = this.GetComponent<Rigidbody>().velocity;
 
-            //‘¬“x‚ªã‚ª‚é‚É‚Â‚ê‚Ä‰Á‘¬•ª‚ªŒ¸­‚·‚é
+            //é€Ÿåº¦ãŒä¸ŠãŒã‚‹ã«ã¤ã‚Œã¦åŠ é€Ÿåˆ†ãŒæ¸›å°‘ã™ã‚‹
             float TotalNowSpeed = Mathf.Sqrt(NowSpeed.z * NowSpeed.z + NowSpeed.x * NowSpeed.x) / 2;
             float SeparateSpeed = Mathf.Floor(TotalNowSpeed / 50);
             if (SeparateSpeed >= 9)
@@ -97,7 +97,7 @@ public class TunaMove: MonoBehaviour
             }
 
 
-            //ƒ}ƒOƒ‚ğ“®‚©‚·
+            //ãƒã‚°ãƒ­ã‚’å‹•ã‹ã™
             float xMovement = Input.GetAxisRaw("Horizontal");
             float zMovement = Input.GetAxisRaw("Vertical");
             float NoSkyBack = 1;
@@ -106,7 +106,7 @@ public class TunaMove: MonoBehaviour
 
             Vector3 osusi = new Vector3();
 
-            //‹ó’†‚Å‚ÍŒã‚ë‚É‰º‚ª‚ç‚È‚¢‚½‚ß‹ó’†‚É‚¢‚éê‡‚ÍNoSkyBack‚Åforce.z‚ğ0‚É‚·‚é
+            //ç©ºä¸­ã§ã¯å¾Œã‚ã«ä¸‹ãŒã‚‰ãªã„ãŸã‚ç©ºä¸­ã«ã„ã‚‹å ´åˆã¯NoSkyBackã§force.zã‚’0ã«ã™ã‚‹
             if (pos.y >= 0.9f && zMovement < 0)
             {
                 jumpUp = 3f;
@@ -115,17 +115,17 @@ public class TunaMove: MonoBehaviour
 
             osusi.x = speed * xMovement * jumpUp;
             osusi.z = speed * zMovement * NoSkyBack;
-            //€‚ñ‚Å‚é‚Í‰Á‘¬‚³‚¹‚È‚¢
+            //æ­»ã‚“ã§ã‚‹æ™‚ã¯åŠ é€Ÿã•ã›ãªã„
             if (!_death)
             {
                 rb.AddForce(osusi, ForceMode.Impulse);
             }
 
-            //ƒ}ƒOƒ‚Ì‘¬“x‚ğæ“¾‚·‚é
+            //ãƒã‚°ãƒ­ã®é€Ÿåº¦ã‚’å–å¾—ã™ã‚‹
             Vector3 velocity = this.GetComponent<Rigidbody>().velocity;
             float TotalVelocity = Mathf.Sqrt(-velocity.z * -velocity.z + velocity.x * velocity.x) / 2;
 
-            //ƒ}ƒOƒ‚ªƒS[ƒ‹‚µ‚½‚Ìˆ—
+            //ãƒã‚°ãƒ­ãŒã‚´ãƒ¼ãƒ«ã—ãŸæ™‚ã®å‡¦ç†
             if (this.transform.position.z >= GoalObject.transform.position.z)
             {
                 GoalCheck = true;
@@ -133,7 +133,7 @@ public class TunaMove: MonoBehaviour
             }
 
 
-            //K”ö‚ğƒXƒs[ƒh‚É‡‚í‚¹‚Ä~‚ç‚¹‚éB
+            //å°»å°¾ã‚’ã‚¹ãƒ”ãƒ¼ãƒ‰ã«åˆã‚ã›ã¦é™ã‚‰ã›ã‚‹ã€‚
             float kosihuriSpeed;
             kosihuriSpeed = TotalVelocity / 10;
             if(kosihuriSpeed <= 2)
@@ -181,24 +181,24 @@ public class TunaMove: MonoBehaviour
             {
                 if (_ranking[i] == 3000000)
                 {
-                    _rankingString += "\n" + (i + 1).ToString() + "ˆÊF" + "No Data!!";
+                    _rankingString += "\n" + (i + 1).ToString() + "ä½ï¼š" + "No Data!!";
                 }
                 else
                 {
                     int _rankingM = (int)(_ranking[i] / 60);
-                    _rankingString = "1ˆÊF" + _rankingM.ToString("00") + ":" + ((int)_ranking[i] % 60).ToString("00");
+                    _rankingString = "1ä½ï¼š" + _rankingM.ToString("00") + ":" + ((int)_ranking[i] % 60).ToString("00");
                 }
             }
             else
             {
                 if (_ranking[i] == 3000000)
                 {
-                    _rankingString += "\n" + (i + 1).ToString() + "ˆÊF" + "No Data!!";
+                    _rankingString += "\n" + (i + 1).ToString() + "ä½ï¼š" + "No Data!!";
                 }
                 else
                 {
                     int _rankingM = (int)(_ranking[i] / 60);
-                    _rankingString += "\n" + (i + 1).ToString() + "ˆÊF" + _rankingM.ToString("00") + ":" +((int)_ranking[i] % 60).ToString("00");
+                    _rankingString += "\n" + (i + 1).ToString() + "ä½ï¼š" + _rankingM.ToString("00") + ":" +((int)_ranking[i] % 60).ToString("00");
                 }
             }
         }

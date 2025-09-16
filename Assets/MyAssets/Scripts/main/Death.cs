@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+ï»¿using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ public class Death : MonoBehaviour
         CancellationToken _token = cts.Token;
 
         await deathUI(_token);
-        //ƒXƒy[ƒX‚ª‰Ÿ‚³‚ê‚é‚Ü‚Åˆ—‘Ò‚¿
+        //ã‚¹ãƒšãƒ¼ã‚¹ãŒæŠ¼ã•ã‚Œã‚‹ã¾ã§å‡¦ç†å¾…ã¡
         await UniTask.WaitUntil(() => Input.GetKey(KeyCode.Space), cancellationToken: _token);
         cts.Cancel();
         _itemOb.GetComponent<_Item>().cancellTasks();
@@ -47,6 +47,6 @@ public class Death : MonoBehaviour
 
         await UniTask.Delay(1000, cancellationToken: token);
         _spaceGuidOb.SetActive(true);
-        Debug.Log("UIˆ—‚ÌI—¹");
+        Debug.Log("UIå‡¦ç†ã®çµ‚äº†");
     }
 }

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,14 +13,14 @@ public class CountDown : MonoBehaviour
     void Start()
     {
         TunaObject = GameObject.Find("Tuna");
-        Debug.Log("GoalƒIƒuƒWƒFƒNƒg‚ğæ“¾");
+        Debug.Log("Goalã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—");
         Timer.SetActive(false);
         StartCoroutine("CountDownCoroutine");
     }
 
     private void FixedUpdate()
     {
-        //ƒS[ƒ‹‚µ‚½‚©‚Ìbool’l‚ğæ“¾
+        //ã‚´ãƒ¼ãƒ«ã—ãŸã‹ã®boolå€¤ã‚’å–å¾—
         bool GoalCheck = TunaObject.GetComponent<TunaMove>().GoalCheck;
         if (GoalCheck)
         {
@@ -30,7 +30,7 @@ public class CountDown : MonoBehaviour
 
     IEnumerator CountDownCoroutine()
     {
-        Debug.Log("ƒRƒ‹[ƒ`ƒ“‚ÌŠJn");
+        Debug.Log("ã‚³ãƒ«ãƒ¼ãƒãƒ³ã®é–‹å§‹");
         CountDownText.text = "3";
         yield return new WaitForSeconds(1);
         CountDownText.text = "2";

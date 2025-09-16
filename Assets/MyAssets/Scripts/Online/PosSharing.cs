@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,13 +38,13 @@ public class PosSharing : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void FixedUpdate()
     {
-        //‚±‚±‚É“¯Šúˆ—‚ğ‘‚­
-        //‚Ü‚¸ƒvƒŒƒCƒ„[‚ÌxÀ•W‚ğæ“¾‚µ‚Ä‚­‚é
+        //ã“ã“ã«åŒæœŸå‡¦ç†ã‚’æ›¸ã
+        //ã¾ãšãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®xåº§æ¨™ã‚’å–å¾—ã—ã¦ãã‚‹
         float myZPos = Tuna.transform.position.z;
         tunaPers = myZPos / mapLength;
         myMarker.transform.position = new Vector3(myMarker.transform.position.x,graphStartPos + mapGraphLength * tunaPers);
 
-        //Photon‚ÌƒJƒXƒ^ƒ€ƒvƒƒpƒeƒB‚ÉƒZƒbƒg
+        //Photonã®ã‚«ã‚¹ã‚¿ãƒ ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã«ã‚»ãƒƒãƒˆ
         propsToSet[ScoreKey] = myZPos;
         PhotonNetwork.LocalPlayer.SetCustomProperties(propsToSet);
         propsToSet.Clear();
@@ -52,7 +52,7 @@ public class PosSharing : MonoBehaviourPunCallbacks
 
     }
 
-    //‘Šè‚ÌƒJƒXƒ^ƒ€ƒvƒƒpƒeƒB‚ª•ÏX‚³‚ê‚½‚ÉŒÄ‚Î‚ê‚éƒR[ƒ‹ƒoƒbƒN
+    //ç›¸æ‰‹ã®ã‚«ã‚¹ã‚¿ãƒ ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãŒå¤‰æ›´ã•ã‚ŒãŸæ™‚ã«å‘¼ã°ã‚Œã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
     {
         if (targetPlayer.ActorNumber != PhotonNetwork.LocalPlayer.ActorNumber)
