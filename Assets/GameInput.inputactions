@@ -1,0 +1,67 @@
+{
+    "name": "GameInput",
+    "maps": [
+        {
+            "name": "Tuna",
+            "id": "96e382f0-2358-4696-a63d-7bfecc5eda3c",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "0ba25c30-628c-4e25-8772-2cfa623c9f3c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6e37e624-96ed-429d-81db-6bbce93bb827",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "e9db1078-124a-4230-85d1-d188ea21cbf0",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "43b20427-23b9-4c1f-96c6-9f967b1329de",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "773946d7-7771-4138-a641-dbcda8e0a404",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

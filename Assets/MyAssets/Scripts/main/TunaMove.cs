@@ -1,7 +1,4 @@
-﻿using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -9,6 +6,7 @@ using UnityEngine.SceneManagement;
 using System;
 using Cysharp.Threading.Tasks;
 using System.Linq;
+using UnityEngine.InputSystem;
 
 
 public class TunaMove: MonoBehaviour
@@ -36,22 +34,28 @@ public class TunaMove: MonoBehaviour
     [SerializeField] Death _deathClass;
     [SerializeField] float anchorAddSpeed;
 
-    Animator tunaAnim;
+    private GameInput _gameInputs;
+    private Vector2 _moveInputValue;
+    Animator _tunaAnim;
 
     string _fileName = "localRanking.txt";
     string _fileName2 = "localRankingLong.txt";
-
-    // Start is called before the first frame update
-    void Start()
+    
+    void Awake()
     {
+        _gameInputs = new GameInput();
+        _gameInputs.Tuna.Move.started += OnMove;
+        _gameInputs.Tuna.Move.performed += OnMove;
+        _gameInputs.Tuna.Move.canceled += OnMove;
+        _gameInputs.Enable();
+        
         ItemOb.GetComponent<_Item>().setObjects();
         _rankingText.SetActive(false);
         float FirstSpeed = speed;
         rb = GetComponent<Rigidbody>();
         GoalObject = GameObject.FindWithTag("Goal");
-        tunaAnim = GetComponent<Animator>();
+        _tunaAnim = GetComponent<Animator>();
     }
-
 
     // Update is called once per frame
     void FixedUpdate()
@@ -98,13 +102,17 @@ public class TunaMove: MonoBehaviour
 
 
             //マグロを動かす
+            /*
             float xMovement = Input.GetAxisRaw("Horizontal");
             float zMovement = Input.GetAxisRaw("Vertical");
+            */
+            float xMovement = _moveInputValue.x;
+            float zMovement = _moveInputValue.y;
             float NoSkyBack = 1;
             float jumpUp = 1;
 
 
-            Vector3 osusi = new Vector3();
+            Vector3 lastSpeed = new Vector3();
 
             //空中では後ろに下がらないため空中にいる場合はNoSkyBackでforce.zを0にする
             if (pos.y >= 0.9f && zMovement < 0)
@@ -113,18 +121,18 @@ public class TunaMove: MonoBehaviour
                 NoSkyBack = 0;
             }
 
-            osusi.x = speed * xMovement * jumpUp;
-            osusi.z = speed * zMovement * NoSkyBack;
+            lastSpeed.x = speed * xMovement * jumpUp;
+            lastSpeed.z = speed * zMovement * NoSkyBack;
             //死んでる時は加速させない
             if (!_death)
             {
-                rb.AddForce(osusi, ForceMode.Impulse);
+                rb.AddForce(lastSpeed, ForceMode.Impulse);
             }
 
             //マグロの速度を取得する
             Vector3 velocity = this.GetComponent<Rigidbody>().velocity;
             float TotalVelocity = Mathf.Sqrt(-velocity.z * -velocity.z + velocity.x * velocity.x) / 2;
-
+            
             //マグロがゴールした時の処理
             if (this.transform.position.z >= GoalObject.transform.position.z)
             {
@@ -140,7 +148,7 @@ public class TunaMove: MonoBehaviour
             {
                 kosihuriSpeed = 2;
             }
-            tunaAnim.SetFloat("kosihuri", kosihuriSpeed);
+            _tunaAnim.SetFloat("kosihuri", kosihuriSpeed);
 
         }else return;
     }
@@ -214,6 +222,20 @@ public class TunaMove: MonoBehaviour
         _rankingText.GetComponent<Text>().text = _rankingString;
     }
 
+    /// <summary>
+    ///inputsystemに登録するメソッド、移動入力を代入するだけ
+    /// </summary>
+    private void OnMove(InputAction.CallbackContext context)
+    {
+        _moveInputValue = context.ReadValue<Vector2>();
+    }
+    
+    private void OnDestroy()
+    {
+        //自身でインスタンス化した為マグロを消すタイミングでDisposeする
+        _gameInputs?.Dispose();
+    }
+    
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.name == "AnchorLing")
