@@ -3,22 +3,22 @@
     "maps": [
         {
             "name": "Tuna",
-            "id": "b7f0592c-f77e-40cc-90c8-1c489923f347",
+            "id": "96e382f0-2358-4696-a63d-7bfecc5eda3c",
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
-                    "id": "cb5b47d0-d62a-422b-9620-de1fa1ff553f",
-                    "expectedControlType": "Vector2",
+                    "type": "Button",
+                    "id": "0ba25c30-628c-4e25-8772-2cfa623c9f3c",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "0d3db80a-3bbb-4d0f-82f3-d88f17be39e7",
+                    "id": "6e37e624-96ed-429d-81db-6bbce93bb827",
                     "path": "",
                     "interactions": "",
                     "processors": "",
@@ -28,9 +28,9 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
-                    "id": "1012b647-12a9-4569-8d60-fe67c3833423",
-                    "path": "2DVector",
+                    "name": "1D Axis",
+                    "id": "e9db1078-124a-4230-85d1-d188ea21cbf0",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -39,9 +39,9 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "a6d1be92-9ae2-479c-9e56-214182b8ab92",
-                    "path": "<Keyboard>/w",
+                    "name": "negative",
+                    "id": "43b20427-23b9-4c1f-96c6-9f967b1329de",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -50,31 +50,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
-                    "id": "b3c593ec-5341-400d-b83c-df019740d60d",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "f455348a-d718-4779-8d92-d00e8933c5a4",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "816d338c-bcc5-47e3-922c-34ddb9062459",
-                    "path": "<Keyboard>/d",
+                    "name": "positive",
+                    "id": "773946d7-7771-4138-a641-dbcda8e0a404",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
