@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 /// <summary>
 /// 入力を検知してActionを実行するクラス
 /// </summary>
-public class InputAction　: Singleton<InputAction>
+public class OriginalInputAction　: Singleton<OriginalInputAction>
 {
     private UnityAction _forwardMove;
     private UnityAction _backwardMove;
