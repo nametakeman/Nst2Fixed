@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+ï»¿using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +19,9 @@ public class test : MonoBehaviour
 
     private async UniTask ObjectsCreate2()
     {
-        //1cube‚ğ•ªŠ„‚·‚é‚½‚ß‚Ì“ñŸŒ³”z—ñ‚ğ€”õA
+        //1cubeã‚’åˆ†å‰²ã™ã‚‹ãŸã‚ã®äºŒæ¬¡å…ƒé…åˆ—ã‚’æº–å‚™ã€
         bool[,] _mapDivisioner = new bool[350, 350];
-        //”z—ñ‚Ì‰Šú‰»ˆ—
+        //é…åˆ—ã®åˆæœŸåŒ–å‡¦ç†
         for (int i = 349; i >= 0; i--)
         {
             for (int i2 = 349; i2 >= 0; i2--)
@@ -30,14 +30,14 @@ public class test : MonoBehaviour
             }
         }
 
-        //‘ÎÛ‚Æ‚È‚éƒIƒuƒWƒFƒNƒg‚ğ‘I‘ğ
+        //å¯¾è±¡ã¨ãªã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’é¸æŠ
         for (int i = _objectStatuses.Length - 1; i >= 0; i--)
         {
             ObjectStatus _targetedOb = _objectStatuses[i];
-            //“ñŸŒ³”z—ñ‚ÌÀ•W‚ğ‚¢‚ê‚éVector2ƒŠƒXƒgŒ^
+            //äºŒæ¬¡å…ƒé…åˆ—ã®åº§æ¨™ã‚’ã„ã‚Œã‚‹Vector2ãƒªã‚¹ãƒˆå‹
             List<Vector2> _registerPoses = new List<Vector2>();
 
-            //mapDivisioner‚Ì0,0‚ğn“_‚Æ‚µ‚Ä‹K‘¥“I‚ÉŠl“¾‰Â”\‚È—Ìˆæ‚ğ’²‚×‚éB”­Œ©Œã‚Ín“_‚ÌÀ•W‚ğ•Û‘¶‚µ‚Ä‚¨‚­BƒIƒuƒWƒFƒNƒg‚Ì’†S‚É’¼‚³‚È‚¢I
+            //mapDivisionerã®0,0ã‚’å§‹ç‚¹ã¨ã—ã¦è¦å‰‡çš„ã«ç²å¾—å¯èƒ½ãªé ˜åŸŸã‚’èª¿ã¹ã‚‹ã€‚ç™ºè¦‹å¾Œã¯å§‹ç‚¹ã®åº§æ¨™ã‚’ä¿å­˜ã—ã¦ãŠãã€‚ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä¸­å¿ƒã«ç›´ã•ãªã„ï¼
             for (int n = 0; n < 350; n++)
             {
                 for (int n2 = 0; n2 < 350; n2++)
@@ -52,23 +52,23 @@ public class test : MonoBehaviour
                 }
             }
 
-            Debug.Log("İ’u‰Â”\n“_ŒÂ”" + _registerPoses.Count());
+            Debug.Log("è¨­ç½®å¯èƒ½å§‹ç‚¹å€‹æ•°" + _registerPoses.Count());
 
             List<int> _registerRandomInt = new List<int>();
             List<Vector2> _dsidedPoses = new List<Vector2>();
             /*
             while (_dsidedPoses.Count <= _objectStatuses[i]._NumOfPiece)
             {
-                //¶¬‚·‚é‚Ô‚ñƒ‰ƒ“ƒ_ƒ€‚Å‚Ô‚ñ‚Ü‚í‚·
+                //ç”Ÿæˆã™ã‚‹ã¶ã‚“ãƒ©ãƒ³ãƒ€ãƒ ã§ã¶ã‚“ã¾ã‚ã™
                 int _randomInt = UnityEngine.Random.Range(0, _registerPoses.Count);
-                //‚à‚µŠùo‚È‚ç‚»‚±‚Åˆ—‚ğI—¹‚³‚¹‚éB
+                //ã‚‚ã—æ—¢å‡ºãªã‚‰ãã“ã§å‡¦ç†ã‚’çµ‚äº†ã•ã›ã‚‹ã€‚
                 if (_registerRandomInt.Contains(_randomInt))
                 {
                     continue;
                 }
 
 
-                //‚¿‚á‚ñ‚Æ¶¬êŠ‚ªŠm•Û‚Å‚«‚é‚©‚ğŠm”F‚·‚é
+                //ã¡ã‚ƒã‚“ã¨ç”Ÿæˆå ´æ‰€ãŒç¢ºä¿ã§ãã‚‹ã‹ã‚’ç¢ºèªã™ã‚‹
                 bool _result = _searchRange(i, _mapDivisioner, _registerPoses[_randomInt]);
                 _registerRandomInt.Add(_randomInt);
                 if (!_result)
@@ -76,7 +76,7 @@ public class test : MonoBehaviour
                     continue;
                 }
 
-                //¶¬‚·‚é
+                //ç”Ÿæˆã™ã‚‹
                 Vector2 _fixedPos = _fixPos(i, _registerPoses[_randomInt], new Vector3(1750, 0, 1750));
                 Instantiate(TEst, new Vector3(_fixedPos.x, 10, _fixedPos.y), Quaternion.identity);
             }
@@ -89,7 +89,7 @@ public class test : MonoBehaviour
 
     private async UniTask<bool> _searchRange(int i, bool[,] _mapDivisioner, Vector2 _startPoint)
     {
-        //n“_‚Ífalse
+        //å§‹ç‚¹ã¯false
         for (int n3 = 0; n3 < _objectStatuses[i]._length * 2; n3++)
         {
             for (int n4 = 0; n4 < _objectStatuses[i]._width * 2; n4++)
@@ -102,7 +102,7 @@ public class test : MonoBehaviour
                 Debug.Log("startPoint" + ((int)_startPoint.x + n3).ToString() + "," + ((int)_startPoint.y + n4).ToString() + "ArrayLength" + _mapDivisioner.GetLength(0) + "," + _mapDivisioner.GetLength(1));
                 if (_mapDivisioner[(int)_startPoint.x + n3, (int)_startPoint.y + n4])
                 {
-                    //‚±‚±‚Ítrue‚É‚È‚Á‚½“_‚Ån“_(n,n2)‚ğ‚¸‚ç‚·
+                    //ã“ã“ã¯trueã«ãªã£ãŸæ™‚ç‚¹ã§å§‹ç‚¹(n,n2)ã‚’ãšã‚‰ã™
                     return false;
                 }
             }
@@ -111,12 +111,12 @@ public class test : MonoBehaviour
         return true;
     }
 
-    //worldPos‚Í¶¬‚·‚écube‚Ì’†SÀ•W‚ğ“n‚·B
+    //worldPosã¯ç”Ÿæˆã™ã‚‹cubeã®ä¸­å¿ƒåº§æ¨™ã‚’æ¸¡ã™ã€‚
     private Vector2 _fixPos(int _objectNum, Vector2 _fixedPos, Vector3 _worldPos)
     {
-        //‚±‚±‚Å”ò‚ñ‚Å‚­‚é‚Ì‚Ín“_‚ÌÀ•W
-        //“ñŸŒ³”z—ñ‚Ì0,0(‚Ì’†‚Å‚àˆê”Ô¶‰º)‚É‚ ‚½‚éŠî€‚Ìƒ[ƒ‹ƒhÀ•W‚ğo‚·
-        Vector2 _firstWdPos = new Vector2(0, _worldPos.z - 1750);//‚±‚êcube‚Ì‘å‚«‚³•Ï‚¦‚é‚ÆƒoƒO‚é‚Ì’ˆÓI
+        //ã“ã“ã§é£›ã‚“ã§ãã‚‹ã®ã¯å§‹ç‚¹ã®åº§æ¨™
+        //äºŒæ¬¡å…ƒé…åˆ—ã®0,0(ã®ä¸­ã§ã‚‚ä¸€ç•ªå·¦ä¸‹)ã«ã‚ãŸã‚‹åŸºæº–ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’å‡ºã™
+        Vector2 _firstWdPos = new Vector2(0, _worldPos.z - 1750);//ã“ã‚Œcubeã®å¤§ãã•å¤‰ãˆã‚‹ã¨ãƒã‚°ã‚‹ã®æ³¨æ„ï¼
 
         Vector2 _startWdPos = new Vector2(_firstWdPos.x + _fixedPos.x * 10, _firstWdPos.y + _fixedPos.y * 10);
         return new Vector2(_startWdPos.x + _objectStatuses[_objectNum]._width * 10, _startWdPos.y + _objectStatuses[_objectNum]._length * 10);

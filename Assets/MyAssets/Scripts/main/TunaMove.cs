@@ -35,6 +35,7 @@ public class TunaMove: MonoBehaviour
     [SerializeField] float anchorAddSpeed;
 
     private GameInput _gameInputs;
+    private OriginalInputAction _originalInputAction;
     private Vector2 _moveInputValue;
     Animator _tunaAnim;
 
@@ -43,11 +44,8 @@ public class TunaMove: MonoBehaviour
     
     void Awake()
     {
-        _gameInputs = new GameInput();
-        _gameInputs.Tuna.Move.started += OnMove;
-        _gameInputs.Tuna.Move.performed += OnMove;
-        _gameInputs.Tuna.Move.canceled += OnMove;
-        _gameInputs.Enable();
+        _originalInputAction = OriginalInputAction.Instance;
+        _originalInputAction.MoveFunc += OnMove;
         
         ItemOb.GetComponent<_Item>().setObjects();
         _rankingText.SetActive(false);
@@ -106,8 +104,8 @@ public class TunaMove: MonoBehaviour
             float xMovement = Input.GetAxisRaw("Horizontal");
             float zMovement = Input.GetAxisRaw("Vertical");
             */
-            float xMovement = _moveInputValue.x;
-            float zMovement = _moveInputValue.y;
+            float xMovement = _moveInputValue.y;
+            float zMovement = _moveInputValue.x;
             float NoSkyBack = 1;
             float jumpUp = 1;
 
@@ -225,9 +223,9 @@ public class TunaMove: MonoBehaviour
     /// <summary>
     ///inputsystemに登録するメソッド、移動入力を代入するだけ
     /// </summary>
-    private void OnMove(InputAction.CallbackContext context)
+    private void OnMove(Vector2 vec2)
     {
-        _moveInputValue = context.ReadValue<Vector2>();
+        _moveInputValue = vec2;
     }
     
     private void OnDestroy()
